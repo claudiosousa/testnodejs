@@ -2,6 +2,7 @@ pages:
   stage: deploy
   script:
   - apt-get install -y nodejs
+  - sudo apt-get install npm
   - npm install
   - mkdir .public
   - cp -r * .public
