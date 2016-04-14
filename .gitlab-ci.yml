@@ -1,0 +1,18 @@
+pages:
+  stage: deploy
+  script:
+  - apt-get install -y nodejs
+  - npm install 
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+  
+all_tests:
+  script:
+   - npm install
+   - node index.js
